@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <!-- Bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdXqLUUAAAAAI9r6Y98VCSM4UxSQjlUHxTnvqiC"></script>
+
+</head>
+
+<body>
+
+  {{{body}}}
+
+  <script src="/javascripts/script.js"></script>
+
+
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!--Boostrap-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <!-- zxcvbn -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/1.0/zxcvbn.min.js"></script>
+  <!--strength meter-->
+  <script type="text/javascript" src="/helpers/zxcvbn-bootstrap.js"></script>
+
+  <!-- Hook up strength bar on page load-->
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#StrengthProgressBar").zxcvbnProgressBar({ passwordInput: "#password" });
+    });
+  </script>
+
+</body>
+
+</html>

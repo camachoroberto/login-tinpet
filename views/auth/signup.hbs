@@ -1,0 +1,29 @@
+<form id="form" action="/signup" method="POST">
+  <label for="username">Nome</label><br>
+  <input type="text" name="username" id='username' placeholder="Seu Nome">
+
+  <label for="phone">Telefone</label><br>
+  <input type="text" name="phone" id="phone" placeholder="(11) 99999-5555">
+
+  <label for="email">E-mail</label><br>
+  <input type="email" name="email" id="email" placeholder="seunome@tinpet.com">
+
+  <label for="password">Password</label><br>
+  <input type="password" name="password" id="password" placeholder="********">
+
+  <label for="birth">Data de Nascimento</label><br>
+  <input type="date" name="birth" id="birth" placeholder="16/02/1987">
+
+  {{#if errorMessage}}
+  <div class="error-message">{{ errorMessage }}</div>
+  {{/if}}
+
+  <div class="progress">
+    <div id="StrengthProgressBar" class="progress-bar"></div>
+  </div>
+
+  <button type="submit">Criar Conta</button>
+</form>
+
+<!--strength meter-->
+<script type="text/javascript" src="/helpers/reCaptcha.js"></script>
