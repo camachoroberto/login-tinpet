@@ -3,17 +3,17 @@ const bcrypt = require("bcrypt");
 const User = require("../../models/user");
 
 const loginPost = (req, res, next) => {
-  const theUsername = req.body.username;
+  const theNickname = req.body.nickname;
   const thePassword = req.body.password;
 
-  if (theUsername === "" || thePassword === "") {
+  if (theNickname === "" || thePassword === "") {
     res.render("auth/login", {
       errorMessage: "Digite nome de usuário e senha para se inscrever."
     });
     return;
   }
 
-  User.findOne({ username: theUsername })
+  User.findOne({ nickname: theNickname })
     .then(user => {
       if (!user) {
         res.render("auth/login", {

@@ -5,15 +5,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    username: {
+    name: {
       type: String,
-      required: true,
-      minlength: 2,
-      maxlength: 50
-    },
-    phone: {
-      type: String,
-      trim: true,
       required: true,
       minlength: 2,
       maxlength: 50
@@ -31,10 +24,17 @@ const userSchema = new Schema(
       minlength: 2,
       maxlength: 200
     },
-    birth: {
+    phone: {
+      type: String,
+      trim: true,
+      required: true,
+      minlength: 2,
+      maxlength: 50
+    },
+    birthDate: {
       type: Date,
       required: true
-    }
+    },
   },
   {
     timestamps: true

@@ -6,23 +6,23 @@ const User = require("../../models/user");
 const bcryptSalt = 10;
 
 const signupPost = (req, res, next) => {
-  const { username, password, phone, email, birth } = req.body;
+  const { name, password, phone, email, birthDate } = req.body;
 
   const salt = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
 
-  if (username === "" || password === "") {
+  if (email === "" || password === "") {
     res.render("auth/signup", {
       errorMessage: "Indique um nome de usuário e uma senha para se inscrever"
     });
     return;
   }
 
-  User.findOne({ username })
+  User.findOne({ email })
     .then(user => {
       if (user !== null) {
         res.render("auth/signup", {
-          errorMessage: "O nome de usuário já existe!"
+          errorMessage: "O email de usuário já existe!"
         });
         return;
       }
@@ -31,10 +31,10 @@ const signupPost = (req, res, next) => {
       const hashPass = bcrypt.hashSync(password, salt);
 
       User.create({
-        username,
-        phone,
+        name,
         email,
-        birth,
+        phone,
+        birthDate,
         password: hashPass
       })
         .then(() => {
