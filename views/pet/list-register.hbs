@@ -1,0 +1,10 @@
+<h1>Lista de Cachorros</h1>
+
+<a href="/register">Cadastrar Novo Cachorro</a><br>
+
+{{#each pets}}
+<h1><a href="/events/{{_id}}">{{name}}</a></h1>
+<button>Edit</button>
+<button>Delete</button>
+<p>DeadLine: {{deadLine}}</p>
+{{/each}}

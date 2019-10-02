@@ -1,4 +1,5 @@
-import { Schema, model } from 'mongoose';
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const petSchema = new Schema(
   {
@@ -6,42 +7,36 @@ const petSchema = new Schema(
       type: String,
       required: true,
       minlength: 2,
-      maxlength: 50,
-    },
-    image: {
-      type: String,
-      default: ' https://images.media-allrecipes.com/images/75131.jpg',
-    },
-
-    gender: {
-      type: String,
-      required: true,
-      enum: ['fêmea', 'macho'],
+      maxlength: 50
     },
     birth: {
       type: Date,
-      required: true,
+      required: true
     },
     breed: {
       type: String,
       required: true,
       minlength: 2,
-      maxlength: 50,
+      maxlength: 50
+    },
+    imageUrl: {
+      type: String
+    },
+    gender: {
+      type: String,
+      required: true,
+      enum: ["fêmea", "macho"]
     },
     pedigree: {
       type: Boolean,
-      required: true,
-    },
-    color: {
-      type: String,
-      required: true,
-      minlength: 2,
-      maxlength: 50,
-    },
+      required: true
+    }
   },
   {
-    timestamps: true,
-  },
+    timestamps: true
+  }
 );
 
-export default model('Pet', petSchema);
+const Pet = mongoose.model("Pet", petSchema);
+
+module.exports = Pet;

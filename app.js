@@ -13,7 +13,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 
 mongoose
-  .connect("mongodb://localhost/basic-auth", { useNewUrlParser: true })
+  .connect("mongodb://localhost/tinpet-app", { useNewUrlParser: true })
   .then(x => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
@@ -62,7 +62,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
-
 
 const router = require("./routes/users");
 app.use("/", router);
