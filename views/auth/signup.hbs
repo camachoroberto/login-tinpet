@@ -1,29 +1,30 @@
-<form id="form" action="/signup" method="POST">
-  <label for="name">Nome</label><br>
-  <input type="text" name="name" id='name' placeholder="Seu Nome">
+<div id="register-page">
+  <form id="form" action="/signup" method="POST">
 
-  <label for="email">E-mail</label><br>
-  <input type="email" name="email" id="email" placeholder="seunome@tinpet.com">
+    <h1><img src="/images/logo-primary.svg" alt="">Tinpet</h1>
 
-  <label for="password">Password</label><br>
-  <input type="password" name="password" id="password" placeholder="********">
+    <h2>Crie uma nova conta</h2>
 
-  <label for="birthDate">Data de Nascimento</label><br>
-  <input type="date" name="birthDate" id="birthDate" placeholder="16/02/1987">
+    <input type="text" name="name" id='name' placeholder="Nome">
 
-  <label for="phone">Telefone</label><br>
-  <input type="text" name="phone" id="phone" placeholder="(11) 99999-5555">
+    <input type="email" name="email" id="email" placeholder="E-mail">
 
-  {{#if errorMessage}}
-  <div class="error-message">{{ errorMessage }}</div>
-  {{/if}}
+    <input type="password" name="password" id="password" placeholder="Senha">
 
-  <div class="progress">
-    <div id="StrengthProgressBar" class="progress-bar"></div>
-  </div>
+    <input type="date" name="birthDate" id="birthDate" placeholder="Data de Nascimento">
 
-  <button type="submit">Criar Conta</button>
-</form>
+    <input type="text" name="phone" id="phone" placeholder="Telefone">
 
-<!--strength meter-->
+    {{#if errorMessage}}
+    <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
+
+    <div class="progress">
+      <div id="StrengthProgressBar" class="progress-bar"></div>
+    </div>
+
+    <button type="submit">Criar Conta</button>
+  </form>
+</div>
+
 <script type="text/javascript" src="/helpers/reCaptcha.js"></script>
