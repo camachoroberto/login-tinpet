@@ -227,6 +227,51 @@ a {
       #application-page div button:hover {
         opacity: 0.8; }
 
+#not-found-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  #not-found-page p {
+    text-align: center;
+    font-size: 16px;
+    max-width: 300px;
+    margin-bottom: 30px; }
+  #not-found-page h1 {
+    font-size: 170px;
+    font-weight: bold;
+    color: #face48; }
+  #not-found-page button {
+    color: #2d2d2d;
+    font-weight: bold;
+    font-size: 20px;
+    width: 200px;
+    height: 52px;
+    border: 1px solid #2d2d2d;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    background: #fff;
+    margin-bottom: 30px;
+    transition: all 0.5s; }
+    #not-found-page button:hover {
+      opacity: 0.8; }
+  #not-found-page div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    #not-found-page div span {
+      border-top: 1px solid #ced0d4;
+      border-bottom: 1px solid #ced0d4;
+      margin: 10px 0;
+      padding: 10px 0;
+      width: 300px;
+      text-align: center;
+      font-size: 14px; }
+    #not-found-page div p {
+      font-size: 14px; }
+
 .error-message {
   background: #f02b63;
   box-sizing: border-box;
