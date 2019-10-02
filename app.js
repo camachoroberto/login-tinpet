@@ -63,6 +63,7 @@ app.use(express.static(path.join(__dirname, "public")));
 // default value for title local
 app.locals.title = "Express - Generated with IronGenerator";
 
+
 const router = require("./routes/users");
 app.use("/", router);
 
