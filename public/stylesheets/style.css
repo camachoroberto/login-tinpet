@@ -224,15 +224,14 @@ a {
   #application-page main {
     max-width: 1024px;
     font-size: 18px;
-    height: calc(100vh - 320px);
+    min-height: calc(100vh - 320px);
     background: #fff;
     padding: 40px;
     box-shadow: 0 5px 25px 1px rgba(55, 58, 64, 0.14);
     border-radius: 5px;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center; }
+    flex-direction: column; }
     #application-page main .application-start {
       display: flex;
       flex-direction: column;
@@ -248,6 +247,56 @@ a {
           position: relative;
           left: 290px;
           top: -200px; }
+  #application-page .application-pet-list li {
+    list-style: none;
+    min-height: 200px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.13);
+    padding: 30px;
+    margin: 30px 0; }
+    #application-page .application-pet-list li .application-pet-list__header {
+      display: flex;
+      margin-bottom: 30px; }
+      #application-page .application-pet-list li .application-pet-list__header span {
+        height: 80px;
+        width: 80px;
+        border: 4px solid #face48;
+        border-radius: 50px; }
+      #application-page .application-pet-list li .application-pet-list__header h3 {
+        margin: 10px 0 0 20px;
+        font-size: 30px;
+        font-weight: bold; }
+    #application-page .application-pet-list li .application-pet-list__info {
+      width: 100%;
+      display: flex;
+      flex-direction: column; }
+      #application-page .application-pet-list li .application-pet-list__info span {
+        display: flex; }
+      #application-page .application-pet-list li .application-pet-list__info p::before {
+        content: '.';
+        color: transparent; }
+    #application-page .application-pet-list li .application-pet-list__buttons {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      height: 0; }
+      #application-page .application-pet-list li .application-pet-list__buttons img {
+        width: 30px;
+        margin-bottom: 50px; }
+      #application-page .application-pet-list li .application-pet-list__buttons a {
+        margin-left: 30px; }
+      #application-page .application-pet-list li .application-pet-list__buttons a:first-child img {
+        width: 50px;
+        animation: rotate 0.6s linear infinite alternate; }
+
+@keyframes rotate {
+  from {
+    transform: rotate(150deg); }
+  to {
+    transform: rotate(200deg); } }
   #application-page footer {
     height: 70px;
     background: #555;
