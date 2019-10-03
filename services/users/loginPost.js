@@ -1,6 +1,6 @@
 // User model
 const bcrypt = require("bcrypt");
-const User = require("../../models/user");
+const User = require("../../models/User");
 
 const loginPost = (req, res, next) => {
   const theNickname = req.body.nickname;
@@ -24,7 +24,7 @@ const loginPost = (req, res, next) => {
       if (bcrypt.compareSync(thePassword, user.password)) {
         // Save the login in the session!
         req.session.currentUser = user;
-        res.redirect("/");
+        res.redirect("/my-account");
       } else {
         res.render("auth/login", {
           errorMessage: "Senha incorreta"

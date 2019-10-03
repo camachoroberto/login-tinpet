@@ -1,6 +1,6 @@
 // User model
 const bcrypt = require("bcrypt");
-const User = require("../../models/user");
+const User = require("../../models/User");
 
 // BCrypt to encrypt passwords
 const bcryptSalt = 10;

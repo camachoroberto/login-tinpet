@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const petSchema = new Schema(
   {
+    owner: {
+      type: String,
+      required: true
+    },
     name: {
       type: String,
       required: true,
@@ -25,11 +29,11 @@ const petSchema = new Schema(
     gender: {
       type: String,
       required: true,
-      enum: ["fêmea", "macho"]
+      enum: ["Fêmea", "Macho"]
     },
     pedigree: {
       type: Boolean,
-      required: true
+      enum: ["Sim", "Não"]
     }
   },
   {

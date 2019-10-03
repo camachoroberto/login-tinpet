@@ -1,7 +1,11 @@
 const logout = (req, res, next) => {
-  req.session.destroy(err => {
-    // cannot access session here
-    res.redirect("/login");
+  req.session.currentUser = null;
+  req.session.destroy(error => {
+    if (error) {
+      console.log(error);
+    } else {
+      res.redirect("/login");
+    }
   });
 };
 

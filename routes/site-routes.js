@@ -6,6 +6,7 @@ const uploadCloud = require("./../config/cloudinary.config.js");
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
+  console.log("aqui", req.session.currentUser);
   res.render("home");
 });
 
@@ -20,8 +21,11 @@ router.use((req, res, next) => {
 }); // ------------------------------------
 //     |
 //     V
-router.get("/secret", (req, res, next) => {
-  res.render("secret");
+router.get("/my-account", async (req, res, next) => {
+  const ownerId = req.session.currentUser._id;
+  console.log(req.session.currentUser);
+  const pets = await Pet.find({ owner: { $eq: ownerId } });
+  res.render("my-account", { pets });
 });
 
 router.get("/register", (req, res, next) => {
@@ -31,16 +35,53 @@ router.get("/register", (req, res, next) => {
 router.post("/register", uploadCloud.single("imageUrl"), (req, res) => {
   const { name, birth, breed, gender, pedigree } = req.body;
   const imageUrl = req.file.url;
-  console.log(imageUrl);
-
-  const newPet = new Pet({ name, birth, breed, gender, pedigree, imageUrl });
+  const owner = req.session.currentUser._id;
+  const newPet = new Pet({
+    owner,
+    name,
+    birth,
+    breed,
+    gender,
+    pedigree,
+    imageUrl
+  });
   newPet
     .save()
     .then(() => {
-      res.redirect("/");
+      res.redirect("/my-account");
     })
     .catch(err => {
       throw new Error(err);
     });
 });
+
+router.get("/edit/:petID", async (req, res) => {
+  const pet = await Pet.findById(req.params.petID);
+  res.render("pet/edit", pet);
+});
+
+router.post("/edit", async (req, res) => {
+  const { name, birth, breed, gender, pedigree } = req.body;
+  const imageUrl = req.file.url;
+  await Pet.updateOne(
+    { _id: req.query.petID },
+    { $set: { name, birth, breed, imageUrl, gender, pedigree } },
+    (err, result) => {
+      if (err) return console.log(err);
+      console.log("Salvo no Banco de Dados");
+      res.redirect("/my-account");
+    }
+  );
+});
+
+router.get("/delete/:petID", (req, res) => {
+  Pet.deleteOne({ _id: req.params.petID })
+    .then(() => {
+      res.redirect("/my-account");
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
+
 module.exports = router;
