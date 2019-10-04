@@ -1,20 +1,31 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const uploadCloud = require("./../../config/cloudinary.config");
 
-const newGet = require('./../../services/pets/newGet');
-const newPost = require('./../../services/pets/newPost');
-const read = require('./../../services/pets/read');
-const getEdit = require('./../../services/pets/getEdit');
-const postEdit = require('./../../services/pets/postEdit');
-const getDelete = require('./../../services/pets/getDelete');
-const postDelete = require('./../../services/pets/postDelete');
+router.use((req, res, next) => {
+  if (req.session.currentUser) {
+    // <== if there's user in the session (user is logged in)
+    next(); // ==> go to the next route ---
+  } else {
+    //    |
+    res.redirect("/login"); //    |
+  } //    |
+}); // ------------------------------------
+//     |
+//     V
 
-router.get('/new', newGet);
-router.post('/new', newPost);
-router.get('/', read);
-router.get('/edit', getEdit);
-router.post('/edit', postEdit);
-router.get('/delete', getDelete);
-router.post('/delete', postDelete);
+const myAccountGet = require("./../../services/pets/myAccount");
+const registerGet = require("./../../services/pets/registerGet");
+const registerPost = require("./../../services/pets/registerPost");
+const editGet = require("./../../services/pets/editGet");
+const editPost = require("./../../services/pets/editPost");
+const deleteGet = require("./../../services/pets/deleteGet");
+
+router.get("/my-account", myAccountGet);
+router.get("/register", registerGet);
+router.post("/register", uploadCloud.single("imageUrl"), registerPost);
+router.get("/edit/:petID", editGet);
+router.post("/edit", editPost);
+router.get("/delete/:petID", deleteGet);
 
 module.exports = router;
