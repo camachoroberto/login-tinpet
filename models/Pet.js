@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const petSchema = new Schema(
@@ -29,11 +29,11 @@ const petSchema = new Schema(
     gender: {
       type: String,
       required: true,
-      enum: ["Fêmea", "Macho"]
+      enum: ['Fêmea', 'Macho']
     },
     pedigree: {
-      type: Boolean,
-      enum: ["Sim", "Não"]
+      type: String,
+      enum: ['Sim', 'Não']
     }
   },
   {
@@ -41,6 +41,6 @@ const petSchema = new Schema(
   }
 );
 
-const Pet = mongoose.model("Pet", petSchema);
+const Pet = mongoose.model('Pet', petSchema);
 
 module.exports = Pet;
