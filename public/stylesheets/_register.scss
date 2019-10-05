@@ -8,7 +8,7 @@
 
   form {
     max-width: 564px;
-    font-size: 18px;
+    font-size: 16px;
     min-height: 80vh;
     background: #fff;
     padding: 40px;
@@ -41,12 +41,12 @@
     }
 
     input {
-      font-size: 18px;
+      font-size: 16px;
       margin-bottom: 30px;
 
       &:active,
       &:focus {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
 
@@ -69,7 +69,7 @@
 
     button {
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
       width: 100%;
       height: 52px;
       border-radius: 30px;
