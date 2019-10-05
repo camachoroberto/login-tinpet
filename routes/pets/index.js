@@ -1,6 +1,6 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const uploadCloud = require("./../../config/cloudinary.config");
+const uploadCloud = require('./../../config/cloudinary.config');
 
 router.use((req, res, next) => {
   if (req.session.currentUser) {
@@ -8,24 +8,24 @@ router.use((req, res, next) => {
     next(); // ==> go to the next route ---
   } else {
     //    |
-    res.redirect("/login"); //    |
+    res.redirect('/login'); //    |
   } //    |
 }); // ------------------------------------
 //     |
 //     V
 
-const myAccountGet = require("./../../services/pets/myAccount");
-const registerGet = require("./../../services/pets/registerGet");
-const registerPost = require("./../../services/pets/registerPost");
-const editGet = require("./../../services/pets/editGet");
-const editPost = require("./../../services/pets/editPost");
-const deleteGet = require("./../../services/pets/deleteGet");
+const myAccountGet = require('./../../services/pets/myAccount');
+const registerGet = require('./../../services/pets/registerGet');
+const registerPost = require('./../../services/pets/registerPost');
+const editGet = require('./../../services/pets/editGet');
+const editPost = require('./../../services/pets/editPost');
+const deleteGet = require('./../../services/pets/deleteGet');
 
-router.get("/my-account", myAccountGet);
-router.get("/register", registerGet);
-router.post("/register", uploadCloud.single("imageUrl"), registerPost);
-router.get("/edit/:petID", editGet);
-router.post("/edit", editPost);
-router.get("/delete/:petID", deleteGet);
+router.get('/my-account', myAccountGet);
+router.get('/register', registerGet);
+router.post('/register', uploadCloud.single('imageUrl'), registerPost);
+router.get('/edit/:petID', editGet);
+router.post('/edit', editPost);
+router.get('/delete/:petID', deleteGet);
 
 module.exports = router;

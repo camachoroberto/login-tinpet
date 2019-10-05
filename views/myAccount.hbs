@@ -1,10 +1,14 @@
 <div id="container">
-  <h2>You are in a session!</h2><br>
+  <h2> Bem Vindo Tinpet!</h2><br>
   <a href="/register">Cadastro de PET</a><br>
+  <a href="/user-edit/{{ownerId}}">User Edit</a><br>
+  <a href="/logout">Logout</a><br>
+
 </div>
 
 {{#each pets}}
-<h1><a href="/pets/{{_id}}">{{name}}</a></h1>
+<img src="{{imageUrl}}" height="150" />
+<h1><a href="/match/{{_id}}">{{name}}</a></h1>
 <button><a href='/edit/{{_id}}'>Edit</a></button>
 <button><a href='/delete/{{_id}}'>Delete</a></button>
 <button><a href='/match/{{_id}}'>Play Match</a></button>

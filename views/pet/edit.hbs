@@ -3,13 +3,14 @@
   <input type="text" name="name" id='name' value="{{name}}">
 
   <label for="birth">Data de Nascimento</label><br>
-  <input type="date" name="birth" id="birth" value="{{{birth}}}">{{birth}}
+  <input type="date" name="birth" id="birth" value="{{birth}}">{{birth}}
 
   <label for="breed">Raça de Cachorro</label><br>
   <input type="text" name="breed" id="breed" value="{{breed}}">
 
   <label for="imageUrl">Potho</label><br>
-  <input type="file" name="imageUrl" src="{{imageUrl}}">
+  <img src="{{imageUrl}}" height="150" />
+  <input type="file" name="imageUrl" value="{{imageUrl}}">{{imageUrl}}
 
   <label for="gender">Gênero do Cachorro</label>
   <select name="gender" id="gender">
