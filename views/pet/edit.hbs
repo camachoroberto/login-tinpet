@@ -1,0 +1,31 @@
+<form id="form" action="/edit/{{_id}}" method="POST" enctype="multipart/form-data">
+  <label for="name">Pet Nome</label><br>
+  <input type="text" name="name" id='name' value="{{name}}">
+
+  <label for="birth">Data de Nascimento</label><br>
+  <input type="date" name="birth" id="birth" value="{{birth}}">{{birth}}
+
+  <label for="breed">Raça de Cachorro</label><br>
+  <input type="text" name="breed" id="breed" value="{{breed}}">
+
+  <label for="imageUrl">Potho</label><br>
+  <img src="{{imageUrl}}" height="150" />
+  <input type="file" name="imageUrl" value="{{imageUrl}}">{{imageUrl}}
+
+  <label for="gender">Gênero do Cachorro</label>
+  <select name="gender" id="gender">
+    <option value="{{gender}}">{{gender}}</option>
+    <option value="Fêmea">Fêmea</option>
+    <option value="Macho">Macho</option>
+  </select>
+
+  <label for="pedigree">Pedigree</label>
+  <select name="pedigree" id="pedigree">
+    <option value="{{pedigree}}">{{pedigree}}</option>
+    <option value="Sim">Sim</option>
+    <option value="Não">Não</option>
+  </select>
+
+
+  <button type="submit">Cadastrar Cachorro</button>
+</form>

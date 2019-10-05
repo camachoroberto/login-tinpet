@@ -1,0 +1,30 @@
+<form id="form" action="/register" method="POST" enctype="multipart/form-data">
+  <label for="name">Pet Nome</label><br>
+  <input type="text" name="name" id='name' placeholder="Rocko">
+
+  <label for="birth">Data de Nascimento</label><br>
+  <input type="date" name="birth" id="birth" placeholder="16/02/1987">
+
+  <label for="breed">Raça de Cachorro</label><br>
+  <input type="text" name="breed" id="breed" placeholder="Bulldog">
+
+  <h3>Foto de cachorro</h3>
+  <label for="imageUrl">Potho</label><br>
+  <input type="file" name="imageUrl">
+
+  <label for="gender">Gênero do Cachorro</label>
+  <select name="gender" id="gender">
+    <option value="--">--</option>
+    <option value="Fêmea">Fêmea</option>
+    <option value="Macho">Macho</option>
+  </select>
+
+  <label for="pedigree">Pedigree</label>
+  <select name="pedigree" id="pedigree">
+    <option value="--">--</option>
+    <option value="Sim">Sim</option>
+    <option value="Não">Não</option>
+  </select>
+
+  <button type="submit">Cadastrar Cachorro</button>
+</form>

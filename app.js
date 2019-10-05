@@ -12,10 +12,8 @@ const zxcvbn = require('zxcvbn');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-const sassMiddleware = require('node-sass-middleware');
-
 mongoose
-  .connect('mongodb://localhost/basic-auth', { useNewUrlParser: true })
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
@@ -24,7 +22,9 @@ mongoose
   });
 
 const app_name = require('./package.json').name;
-const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
+const debug = require('debug')(
+  `${app_name}:${path.basename(__filename).split('.')[0]}`
+);
 
 const app = express();
 
@@ -36,8 +36,8 @@ app.use(cookieParser());
 
 app.use(
   session({
-    secret: 'basic-auth-secret',
-    cookie: { maxAge: 60000000 },
+    secret: 'auth-login',
+    cookie: { maxAge: 6000000 },
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
       ttl: 24 * 60 * 60, // 1 day
@@ -50,28 +50,25 @@ app.use(
   require('node-sass-middleware')({
     src: path.join(__dirname, 'public'),
     dest: path.join(__dirname, 'public'),
-    sourceMap: true,
-  }),
+    sourceMap: true
+  })
 );
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(
-  sassMiddleware({
-    src: __dirname + '/public/stylesheets',
-    dest: __dirname + '/public',
-    debug: true,
-  }),
-);
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
-const router = require('./routes/users');
-app.use('/', router);
+const users = require('./routes/users');
+const home = require('./routes/index.js');
+const pets = require('./routes/pets');
+const match = require('./routes/match');
 
-const index = require('./routes/site-routes');
-app.use('/', index);
+app.use('/', users);
+app.use('/', home);
+app.use('/', pets);
+app.use('/', match);
 
 module.exports = app;
