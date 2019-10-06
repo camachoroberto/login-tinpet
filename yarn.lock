@@ -1907,6 +1907,7 @@ multer@^1.4.2:
     type-is "^1.6.4"
     xtend "^4.0.0"
 
+<<<<<<< HEAD
 mz@^2.7.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/mz/-/mz-2.7.0.tgz#95008057a56cafadc2bc63dde7f9ff6955948e32"
@@ -1916,6 +1917,8 @@ mz@^2.7.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
+=======
+>>>>>>> origin
 nan@2.13.2:
   version "2.13.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
@@ -3042,6 +3045,7 @@ term-size@^1.2.0:
   dependencies:
     execa "^0.7.0"
 
+<<<<<<< HEAD
 thenify-all@^1.0.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/thenify-all/-/thenify-all-1.6.0.tgz#1a1918d402d8fc3f98fbf234db0bcc8cc10e9726"
@@ -3056,6 +3060,8 @@ thenify-all@^1.0.0:
   dependencies:
     any-promise "^1.0.0"
 
+=======
+>>>>>>> origin
 through@2, through@^2.3.8, through@~2.3, through@~2.3.4:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
