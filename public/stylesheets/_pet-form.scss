@@ -1,0 +1,127 @@
+#pet-form-page {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 50px 0;
+
+  form {
+    max-width: 564px;
+    font-size: 16px;
+    min-height: 80vh;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 5px 25px 1px rgba(55, 58, 64, 0.14);
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+      text-align: center;
+
+      h1 {
+        font: 60px 'Baloo Thambi', sans-serif;
+        color: #face48;
+        position: relative;
+        margin: 0 auto;
+
+        img {
+          width: 55px;
+          transform: rotate(-20deg);
+          position: relative;
+          top: -7px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 30px !important;
+    }
+
+    input {
+      font-size: 16px;
+      margin-bottom: 30px;
+
+      &:active,
+      &:focus {
+        font-size: 16px;
+      }
+    }
+
+    p {
+      display: flex;
+      justify-content: flex-start;
+
+      a {
+        color: #face48;
+        font-weight: bold;
+        margin-left: 10px;
+        transition: all 0.8s;
+
+        &:hover {
+          text-decoration: none;
+          opacity: 0.6;
+        }
+      }
+    }
+
+    label {
+      margin: 10px 0;
+    }
+
+    select {
+      width: 100%;
+      height: 52px;
+      padding: 10px;
+      border-radius: 5px;
+      border: solid 1px #ced0d4;
+      background-color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    input[type='file'] {
+      display: none;
+    }
+
+    .upload-image {
+      width: 100%;
+      height: 52px;
+      border-radius: 30.4px;
+      border: solid 1px #767b85;
+      background-color: #fff;
+      color: #2d2d2d;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    button {
+      font-weight: bold;
+      font-size: 16px;
+      width: 100%;
+      height: 52px;
+      border-radius: 30px;
+      box-shadow: 0 3px 15px 1px rgba(55, 58, 64, 0.14);
+      background-image: linear-gradient(97deg, #face48, #fcde83);
+      transition: all 0.5s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
