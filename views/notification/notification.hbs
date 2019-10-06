@@ -1,12 +1,10 @@
-<h1>De um Match</h1>
-{{petSelectId}}
-{{petsEvaluation}}
-{{#each pets}}
+{{!-- {{#each groupPetsDatas as |item i|}}
 <img src="{{imageUrl}}" height="150" />
-<h1><a href="/match/{{_id}}">{{name}}</a></h1>
+<h1><a href="/match/{{{petInterested._id}}}">-{{@index}}: {{@key}} {{petInterested.[0]}}-</a></h1>
 <a href='/match-evaluation/{{_id}}/{{../petSelectId}}'>Aceiado</a>
 <button><a href='/delete/{{_id}}'>Rejeitado</a></button>
 <button><a href='/match/{{_id}}'>N/A</a></button>
 
 <p>DeadLine: {{updatedAt}}</p>
-{{/each}}
+<hr>
+{{/each}} --}}
