@@ -23,7 +23,7 @@
       align-items: center;
 
       img {
-        width: 60px;
+        width: 52px;
         transform: rotate(-20deg);
         margin-right: 10px;
       }
@@ -37,24 +37,39 @@
         font-weight: bold;
         font-size: 24px;
         color: #fff;
-      }
 
-      .user-options {
-        height: 0;
+        .user-options {
+          height: 0;
+          width: 200px;
+          position: relative;
+          right: 120px;
+          top: -40px;
+          z-index: 10;
 
-        ul {
-          width: 150px !important;
-          margin: 0;
-
-          li {
-            list-style: none;
-            border: 1px solid #ced0d4;
-            padding: 5px;
+          ul {
+            width: 100% !important;
             margin: 0;
+            background: #fff;
 
-            a {
-              text-decoration: none;
-              color: #2d2d2d;
+            li {
+              list-style: none;
+              border: 1px solid #ced0d4;
+              padding: 5px;
+              padding-left: 10px;
+              text-align: start;
+
+              a {
+                text-decoration: none;
+                color: #2d2d2d;
+                font-size: 16px;
+                font-weight: normal;
+                transition: all 0.5s;
+
+                &:hover {
+                  opacity: 0.8;
+                  color: #face48;
+                }
+              }
             }
           }
         }
@@ -77,22 +92,27 @@
     }
 
     h1 {
-      font-size: 50px;
+      font-size: 42px;
       font-weight: bold;
     }
 
-    button {
-      font-weight: bold;
-      font-size: 16px;
-      width: 200px;
-      height: 52px;
-      border-radius: 30px;
-      box-shadow: 0 3px 15px 1px rgba(55, 58, 64, 0.14);
-      background-image: linear-gradient(97deg, #face48, #fcde83);
-      transition: all 0.5s;
+    a {
+      color: #2d2d2d;
+      text-decoration: none;
 
-      &:hover {
-        opacity: 0.8;
+      button {
+        font-weight: bold;
+        font-size: 16px;
+        width: 200px;
+        height: 52px;
+        border-radius: 30px;
+        box-shadow: 0 3px 15px 1px rgba(55, 58, 64, 0.14);
+        background-image: linear-gradient(97deg, #face48, #fcde83);
+        transition: all 0.5s;
+
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
@@ -193,8 +213,13 @@
         height: 0;
 
         img {
-          width: 30px;
+          width: 25px;
           margin-bottom: 50px;
+          transition: all 0.5s;
+
+          &:hover {
+            opacity: 0.7;
+          }
         }
 
         a {

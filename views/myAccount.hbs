@@ -4,30 +4,33 @@
       <a href="/">
         <img src="/images/logo-primary.svg" alt="Logo">
       </a>
-      <div class="user-options">
-        <ul>
-          <li><a href="/user-edit/{{ownerId}}">User Edit</a></li>
-          <li><a href="/logout">Logout</a></li>
-          <a href="/user-edit/{{name}}">{{name}}</a>
-        </ul>
-      </div>
-      <button>P</button>
+
+      <button>{{name}}
+        <div class="user-options">
+          <ul>
+            <li><a href="/user-edit/{{ownerId}}">Editar cadastro</a></li>
+            <li><a href="/logout">Sair</a></li>
+          </ul>
+        </div>
+      </button>
     </div>
   </header>
   <section>
     <div>
       <h1>Meus Pets</h1>
-      <button><a href="/register">Adicionar Pet</a></button>
+      <a href="/register"><button>Adicionar Pet</button></a>
     </div>
   </section>
   <main>
-    {{!-- <div class="application-start">
+    {{!-- {{#if pets}}
+    <div class="application-start">
       <span>
         <img src="/images/dashed-line.svg" alt="Dashed line">
       </span>
       <h2>Adicione seu primeiro Pet</h2>
       <p>Clique no botão acima para adicionar seu primeiro Pet</p>
-    </div> --}}
+    </div>
+    {{/if}} --}}
 
     {{#each pets}}
     <ul class="application-pet-list">
