@@ -15,7 +15,9 @@ const MongoStore = require('connect-mongo')(session);
 mongoose
   .connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
   })
   .catch(err => {
     console.error('Error connecting to mongo', err);
@@ -40,9 +42,9 @@ app.use(
     cookie: { maxAge: 6000000 },
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
-      ttl: 24 * 60 * 60, // 1 day
-    }),
-  }),
+      ttl: 24 * 60 * 60 // 1 day
+    })
+  })
 );
 // Express View engine setup
 
@@ -65,10 +67,12 @@ const users = require('./routes/users');
 const home = require('./routes/index.js');
 const pets = require('./routes/pets');
 const match = require('./routes/match');
+const notifications = require('./routes/notifications');
 
 app.use('/', users);
 app.use('/', home);
 app.use('/', pets);
 app.use('/', match);
+app.use('/', notifications);
 
 module.exports = app;
