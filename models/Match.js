@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const matchSchema = new Schema(
   {
-    petEvaluating: { type: String, required: true },
-    petEvaluated: { type: String, required: true },
+    petEvaluating: { type: Schema.Types.ObjectId, ref: 'Pet', required: true },
+    petEvaluated: { type: Schema.Types.ObjectId, ref: 'Pet', required: true },
     evaluation: {
       type: String,
       required: true,
