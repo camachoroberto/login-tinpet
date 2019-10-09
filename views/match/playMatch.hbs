@@ -1,12 +1,60 @@
-<h1>De um Match</h1>
-{{petSelectId}}
-{{petsEvaluation}}
-{{#each pets}}
-<img src="{{imageUrl}}" height="150" />
-<h1><a href="/match/{{_id}}">{{name}}</a></h1>
-<a href='/match-evaluation/{{_id}}/{{../petSelectId}}'>Aceiado</a>
-<button><a href='/delete/{{_id}}'>Rejeitado</a></button>
-<button><a href='/match/{{_id}}'>N/A</a></button>
+<div id="application-page">
+  <div style="display: none">
+    {{petSelectId}}
+    {{petsEvaluation}}
+  </div>
+  <header>
+    <div>
+      <a href="/">
+        <img src="/images/logo-primary.svg" alt="Logo">
+      </a>
+      <button>{{name}}
+        <div class="user-options">
+        </div>
+      </button>
+    </div>
+  </header>
+  <section>
+    <div>
+      <h1>Match</h1>
+    </div>
+  </section>
+  <main>
+    {{#each pets}}
+    <ul class="application-pet-list">
+      <li>
+        <div class="application-pet-list__header">
+          <span><img src="{{imageUrl}}" /></span>
+          <h3><a href="/match/{{_id}}"></a>{{name}}</h3>
+        </div>
+        <div class="application-pet-list__info">
+          <span>
+            <strong>Raça:</strong>
+            <p>{{breed}}</p>
+          </span>
+          <span>
+            <strong>Gênero:</strong>
+            <p>{{gender}}</p>
+          </span>
+          <span>
+            <strong>Data de Nascimento:</strong>
+            <p>{{birth}}</p>
+          </span>
+        </div>
+        <div class="application-pet-list__buttons">
+          <a href='/match-evaluation/{{_id}}/{{../petSelectId}}'><img src="/images/heart-solid.svg"
+              style="animation: none" alt=""></a>
+          <a href='/delete/{{_id}}'><img src="/images/times-solid.svg" alt=""></a>
+          <a href='/match/{{_id}}'><img src="/images/question-solid.svg" alt=""></a>
+        </div>
+      </li>
+      {{/each}}
 
-<p>DeadLine: {{updatedAt}}</p>
-{{/each}}
+    </ul>
+  </main>
+  <footer>
+    <div>
+      <p>&copy Tinpet 2019. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</div>

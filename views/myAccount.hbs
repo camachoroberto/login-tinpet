@@ -4,10 +4,9 @@
       <a href="/">
         <img src="/images/logo-primary.svg" alt="Logo">
       </a>
-      <button>{{name}}
+      <button class="user">{{name}}
         <div class="user-options">
           <ul>
-            <li><a href="/notifications/">Notificações</a></li>
             <li><a href="/user-edit/{{ownerId}}">Editar cadastro</a></li>
             <li><a href="/logout">Sair</a></li>
           </ul>
@@ -37,20 +36,20 @@
       <li>
         <div class="application-pet-list__header">
           <span><img src="{{imageUrl}}" /></span>
-          <h3>Thor</h3>
+          <h3>{{name}}</h3>
         </div>
         <div class="application-pet-list__info">
           <span>
             <strong>Raça:</strong>
-            <p>Pastor alemão</p>
+            <p>{{breed}}</p>
           </span>
           <span>
             <strong>Gênero:</strong>
-            <p>Macho</p>
+            <p>{{gender}}</p>
           </span>
           <span>
             <strong>Data de Nascimento:</strong>
-            <p>02 de outubro de 2019</p>
+            <p>{{birth}}</p>
           </span>
         </div>
         <div class="application-pet-list__buttons">
