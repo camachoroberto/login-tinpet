@@ -1,31 +1,37 @@
-<form id="form" action="/edit/{{_id}}" method="POST" enctype="multipart/form-data">
-  <label for="name">Pet Nome</label><br>
-  <input type="text" name="name" id='name' value="{{name}}">
+<div id="pet-form-page">
+  <form action="/edit/{{_id}}" method="PUT" enctype="multipart/form-data">
+    <a href="/">
+      <h1><img src="/images/logo-primary.svg" alt="">Tinpet</h1>
+    </a>
 
-  <label for="birth">Data de Nascimento</label><br>
-  <input type="date" name="birth" id="birth" value="{{birth}}">{{birth}}
+    <h2>Editar Pet</h2>
 
-  <label for="breed">Raça de Cachorro</label><br>
-  <input type="text" name="breed" id="breed" value="{{breed}}">
+    <input type="text" name="name" id="name" placeholder="Nome do pet" value="{{name}}">
 
-  <label for="imageUrl">Potho</label><br>
-  <img src="{{imageUrl}}" height="150" />
-  <input type="file" name="imageUrl" value="{{imageUrl}}">{{imageUrl}}
+    <input type="text" name="breed" id="breed" placeholder="Raça" value="{{breed}}">
 
-  <label for="gender">Gênero do Cachorro</label>
-  <select name="gender" id="gender">
-    <option value="{{gender}}">{{gender}}</option>
-    <option value="Fêmea">Fêmea</option>
-    <option value="Macho">Macho</option>
-  </select>
+    <label for="birth">Data de nascimento</label>
+    <input type="date" name="birth" id="birth" placeholder="Data de nascimento" value={{birth}}>
 
-  <label for="pedigree">Pedigree</label>
-  <select name="pedigree" id="pedigree">
-    <option value="{{pedigree}}">{{pedigree}}</option>
-    <option value="Sim">Sim</option>
-    <option value="Não">Não</option>
-  </select>
+    <label for="gender">Gênero</label>
+    <select name="gender" id="gender">
+      <option value="{{gender}}">{{gender}}</option>
+      <option value="Fêmea">Fêmea</option>
+      <option value="Macho">Macho</option>
+    </select>
 
+    <label for="pedigree">Pedigree</label>
+    <select name="pedigree" id="pedigree">
+      <option value="{{pedigree}}">{{pedigree}}</option>
+      <option value="Sim">Sim</option>
+      <option value="Não">Não</option>
+    </select>
 
-  <button type="submit">Cadastrar Cachorro</button>
-</form>
+    <label for="imageUrl" class="upload-image">Atualizar foto
+      <input id="imageUrl" type="file" name="imageUrl" value="{{imageUrl}}">
+    </label>
+    <img src="{{imageUrl}}" width="150" style="margin: 0 0 30px" />
+
+    <button type="submit">Salvar alterações</button>
+  </form>
+</div>

@@ -45,7 +45,7 @@ a {
   background: #f5f5f5; }
   #login-page form {
     max-width: 564px;
-    font-size: 18px;
+    font-size: 16px;
     height: 80vh;
     background: #fff;
     padding: 40px;
@@ -72,10 +72,10 @@ a {
       font-weight: bold;
       margin-bottom: 30px !important; }
     #login-page form input {
-      font-size: 18px;
+      font-size: 16px;
       margin-bottom: 30px; }
       #login-page form input:active, #login-page form input:focus {
-        font-size: 18px; }
+        font-size: 16px; }
     #login-page form p {
       display: flex;
       justify-content: flex-start; }
@@ -89,7 +89,7 @@ a {
           opacity: 0.6; }
     #login-page form button {
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
       width: 100%;
       height: 52px;
       border-radius: 30px;
@@ -106,10 +106,11 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f5f5; }
+  background: #f5f5f5;
+  padding: 50px 0; }
   #register-page form {
     max-width: 564px;
-    font-size: 18px;
+    font-size: 16px;
     min-height: 80vh;
     background: #fff;
     padding: 40px;
@@ -119,26 +120,29 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center; }
-    #register-page form h1 {
-      font: 60px 'Baloo Thambi', sans-serif;
-      color: #face48;
-      position: relative;
-      margin: 0 auto; }
-      #register-page form h1 img {
-        width: 55px;
-        transform: rotate(-20deg);
+    #register-page form a {
+      text-decoration: none;
+      text-align: center; }
+      #register-page form a h1 {
+        font: 60px 'Baloo Thambi', sans-serif;
+        color: #face48;
         position: relative;
-        top: -7px;
-        margin-right: 10px; }
+        margin: 0 auto; }
+        #register-page form a h1 img {
+          width: 55px;
+          transform: rotate(-20deg);
+          position: relative;
+          top: -7px;
+          margin-right: 10px; }
     #register-page form h2 {
       font-size: 25px;
       font-weight: bold;
       margin-bottom: 30px !important; }
     #register-page form input {
-      font-size: 18px;
+      font-size: 16px;
       margin-bottom: 30px; }
       #register-page form input:active, #register-page form input:focus {
-        font-size: 18px; }
+        font-size: 16px; }
     #register-page form p {
       display: flex;
       justify-content: flex-start; }
@@ -152,7 +156,7 @@ a {
           opacity: 0.6; }
     #register-page form button {
       font-weight: bold;
-      font-size: 20px;
+      font-size: 16px;
       width: 100%;
       height: 52px;
       border-radius: 30px;
@@ -184,7 +188,7 @@ a {
       padding: 0 30px;
       align-items: center; }
       #application-page header div img {
-        width: 60px;
+        width: 52px;
         transform: rotate(-20deg);
         margin-right: 10px; }
       #application-page header div button {
@@ -196,6 +200,32 @@ a {
         font-weight: bold;
         font-size: 24px;
         color: #fff; }
+        #application-page header div button .user-options {
+          height: 0;
+          width: 200px;
+          position: relative;
+          right: 120px;
+          top: -40px;
+          z-index: 10; }
+          #application-page header div button .user-options ul {
+            width: 100% !important;
+            margin: 0;
+            background: #fff; }
+            #application-page header div button .user-options ul li {
+              list-style: none;
+              border: 1px solid #ced0d4;
+              padding: 5px;
+              padding-left: 10px;
+              text-align: start; }
+              #application-page header div button .user-options ul li a {
+                text-decoration: none;
+                color: #2d2d2d;
+                font-size: 16px;
+                font-weight: normal;
+                transition: all 0.5s; }
+                #application-page header div button .user-options ul li a:hover {
+                  opacity: 0.8;
+                  color: #face48; }
   #application-page section {
     width: 100%;
     height: 120px;
@@ -208,22 +238,25 @@ a {
       align-items: center;
       padding: 20px 30px; }
     #application-page section h1 {
-      font-size: 50px;
+      font-size: 42px;
       font-weight: bold; }
-    #application-page section button {
-      font-weight: bold;
-      font-size: 16px;
-      width: 200px;
-      height: 52px;
-      border-radius: 30px;
-      box-shadow: 0 3px 15px 1px rgba(55, 58, 64, 0.14);
-      background-image: linear-gradient(97deg, #face48, #fcde83);
-      transition: all 0.5s; }
-      #application-page section button:hover {
-        opacity: 0.8; }
+    #application-page section a {
+      color: #2d2d2d;
+      text-decoration: none; }
+      #application-page section a button {
+        font-weight: bold;
+        font-size: 16px;
+        width: 200px;
+        height: 52px;
+        border-radius: 30px;
+        box-shadow: 0 3px 15px 1px rgba(55, 58, 64, 0.14);
+        background-image: linear-gradient(97deg, #face48, #fcde83);
+        transition: all 0.5s; }
+        #application-page section a button:hover {
+          opacity: 0.8; }
   #application-page main {
     max-width: 1024px;
-    font-size: 18px;
+    font-size: 16px;
     min-height: calc(100vh - 320px);
     background: #fff;
     padding: 40px;
@@ -260,10 +293,16 @@ a {
       display: flex;
       margin-bottom: 30px; }
       #application-page .application-pet-list li .application-pet-list__header span {
-        height: 80px;
-        width: 80px;
+        height: 150px;
+        width: 150px;
         border: 4px solid #face48;
-        border-radius: 50px; }
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      #application-page .application-pet-list li .application-pet-list__header img {
+        height: 100%;
+        border-radius: 50%; }
       #application-page .application-pet-list li .application-pet-list__header h3 {
         margin: 10px 0 0 20px;
         font-size: 30px;
@@ -284,8 +323,11 @@ a {
       justify-content: flex-end;
       height: 0; }
       #application-page .application-pet-list li .application-pet-list__buttons img {
-        width: 30px;
-        margin-bottom: 50px; }
+        width: 25px;
+        margin-bottom: 50px;
+        transition: all 0.5s; }
+        #application-page .application-pet-list li .application-pet-list__buttons img:hover {
+          opacity: 0.7; }
       #application-page .application-pet-list li .application-pet-list__buttons a {
         margin-left: 30px; }
       #application-page .application-pet-list li .application-pet-list__buttons a:first-child img {
@@ -335,7 +377,7 @@ a {
   #not-found-page button {
     color: #2d2d2d;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
     width: 200px;
     height: 52px;
     border: 1px solid #2d2d2d;
@@ -360,6 +402,98 @@ a {
       font-size: 14px; }
     #not-found-page div p {
       font-size: 14px; }
+
+#pet-form-page {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 50px 0; }
+  #pet-form-page form {
+    max-width: 564px;
+    font-size: 16px;
+    min-height: 80vh;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 5px 25px 1px rgba(55, 58, 64, 0.14);
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    #pet-form-page form a {
+      text-decoration: none;
+      text-align: center; }
+      #pet-form-page form a h1 {
+        font: 60px 'Baloo Thambi', sans-serif;
+        color: #face48;
+        position: relative;
+        margin: 0 auto; }
+        #pet-form-page form a h1 img {
+          width: 55px;
+          transform: rotate(-20deg);
+          position: relative;
+          top: -7px;
+          margin-right: 10px; }
+    #pet-form-page form h2 {
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 30px !important; }
+    #pet-form-page form input {
+      font-size: 16px;
+      margin-bottom: 30px; }
+      #pet-form-page form input:active, #pet-form-page form input:focus {
+        font-size: 16px; }
+    #pet-form-page form p {
+      display: flex;
+      justify-content: flex-start; }
+      #pet-form-page form p a {
+        color: #face48;
+        font-weight: bold;
+        margin-left: 10px;
+        transition: all 0.8s; }
+        #pet-form-page form p a:hover {
+          text-decoration: none;
+          opacity: 0.6; }
+    #pet-form-page form label {
+      margin: 10px 0; }
+    #pet-form-page form select {
+      width: 100%;
+      height: 52px;
+      padding: 10px;
+      border-radius: 5px;
+      border: solid 1px #ced0d4;
+      background-color: #ffffff;
+      margin-bottom: 10px; }
+    #pet-form-page form input[type='file'] {
+      display: none; }
+    #pet-form-page form .upload-image {
+      width: 100%;
+      height: 52px;
+      border-radius: 30.4px;
+      border: solid 1px #767b85;
+      background-color: #fff;
+      color: #2d2d2d;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer; }
+      #pet-form-page form .upload-image:hover {
+        opacity: 0.7; }
+    #pet-form-page form button {
+      font-weight: bold;
+      font-size: 16px;
+      width: 100%;
+      height: 52px;
+      border-radius: 30px;
+      box-shadow: 0 3px 15px 1px rgba(55, 58, 64, 0.14);
+      background-image: linear-gradient(97deg, #face48, #fcde83);
+      transition: all 0.5s; }
+      #pet-form-page form button:hover {
+        opacity: 0.8; }
 
 .error-message {
   background: #f02b63;

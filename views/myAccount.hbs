@@ -1,52 +1,42 @@
-<div id="container">
-  <h2> Bem Vindo Tinpet!</h2><br>
-  <a href="/register">Cadastro de PET</a><br>
-  <a href="/user-edit/{{ownerId}}">User Edit</a><br>
-  <a href="/logout">Logout</a><br>
-  <a href="/notifications/">Notificaction</a><br>
-
-  <a href="/user-edit/{{name}}">{{name}}</a><br>
-
-
-</div>
-
-{{#each pets}}
-<img src="{{imageUrl}}" height="150" />
-<h1><a href="/match/{{_id}}">{{name}}</a></h1>
-<button><a href='/edit/{{_id}}'>Edit</a></button>
-<button><a href='/delete/{{_id}}'>Delete</a></button>
-<button><a href='/match/{{_id}}'>Play Match</a></button>
-
-<p>DeadLine: {{updatedAt}}</p>
-{{/each}}
-
 <div id="application-page">
   <header>
     <div>
       <a href="/">
         <img src="/images/logo-primary.svg" alt="Logo">
       </a>
-      <button>P</button>
+      <button>{{name}}
+        <div class="user-options">
+          <ul>
+            <li><a href="/notifications/">Notificações</a></li>
+            <li><a href="/user-edit/{{ownerId}}">Editar cadastro</a></li>
+            <li><a href="/logout">Sair</a></li>
+          </ul>
+        </div>
+      </button>
     </div>
   </header>
   <section>
     <div>
       <h1>Meus Pets</h1>
-      <button>Adicionar Pet</button>
+      <a href="/register"><button>Adicionar Pet</button></a>
     </div>
   </section>
   <main>
-    {{!-- <div class="application-start">
+    {{!-- {{#if pets}}
+    <div class="application-start">
       <span>
         <img src="/images/dashed-line.svg" alt="Dashed line">
       </span>
       <h2>Adicione seu primeiro Pet</h2>
       <p>Clique no botão acima para adicionar seu primeiro Pet</p>
-    </div> --}}
+    </div>
+    {{/if}} --}}
+
+    {{#each pets}}
     <ul class="application-pet-list">
       <li>
         <div class="application-pet-list__header">
-          <span></span>
+          <span><img src="{{imageUrl}}" /></span>
           <h3>Thor</h3>
         </div>
         <div class="application-pet-list__info">
@@ -64,63 +54,13 @@
           </span>
         </div>
         <div class="application-pet-list__buttons">
-          <a href=""><img src="/images/bone-solid.svg" alt=""></a>
-          <a href=""><img src="/images/edit-regular.svg" alt=""></a>
-          <a href=""><img src="/images/trash-alt-regular.svg" alt=""></a>
+          <a href='/match/{{_id}}'><img src="/images/bone-solid.svg" alt=""></a>
+          <a href="/edit/{{_id}}"><img src="/images/edit-regular.svg" alt=""></a>
+          <a href="/delete/{{_id}}"><img src="/images/trash-alt-regular.svg" alt=""></a>
         </div>
       </li>
+      {{/each}}
 
-      <li>
-        <div class="application-pet-list__header">
-          <span></span>
-          <h3>Luke</h3>
-        </div>
-        <div class="application-pet-list__info">
-          <span>
-            <strong>Raça:</strong>
-            <p>Pastor alemão</p>
-          </span>
-          <span>
-            <strong>Gênero:</strong>
-            <p>Macho</p>
-          </span>
-          <span>
-            <strong>Data de Nascimento:</strong>
-            <p>02 de outubro de 2019</p>
-          </span>
-        </div>
-        <div class="application-pet-list__buttons">
-          <a href=""><img src="/images/bone-solid.svg" alt=""></a>
-          <a href=""><img src="/images/edit-regular.svg" alt=""></a>
-          <a href=""><img src="/images/trash-alt-regular.svg" alt=""></a>
-        </div>
-      </li>
-
-      <li>
-        <div class="application-pet-list__header">
-          <span></span>
-          <h3>Nick</h3>
-        </div>
-        <div class="application-pet-list__info">
-          <span>
-            <strong>Raça:</strong>
-            <p>Pastor alemão</p>
-          </span>
-          <span>
-            <strong>Gênero:</strong>
-            <p>Macho</p>
-          </span>
-          <span>
-            <strong>Data de Nascimento:</strong>
-            <p>02 de outubro de 2019</p>
-          </span>
-        </div>
-        <div class="application-pet-list__buttons">
-          <a href=""><img src="/images/bone-solid.svg" alt=""></a>
-          <a href=""><img src="/images/edit-regular.svg" alt=""></a>
-          <a href=""><img src="/images/trash-alt-regular.svg" alt=""></a>
-        </div>
-      </li>
     </ul>
   </main>
   <footer>

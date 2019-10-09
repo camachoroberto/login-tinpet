@@ -1,26 +1,29 @@
-<form id="form" action="/user-edit/{{_id}}" method="POST">
-  <label for="name">Nome</label><br>
-  <input type="text" name="name" id='name' value="{{name}}">
+<div id="register-page">
+  <form id="form" action="/user-edit/{{_id}}" method="PUT">
+    <a href="/">
+      <h1><img src="/images/logo-primary.svg" alt="">Tinpet</h1>
+    </a>
 
-  <label for="email">E-mail</label><br>
-  <input type="email" name="email" id="email" value="{{email}}">
+    <h2>Editar cadastro</h2>
 
-  <label for="password">Password</label><br>
-  <input type="text" name="password" id="password" value="{{password}}">
+    <input type="text" name="name" id='name' placeholder="Nome" value="{{name}}">
 
-  <label for="birthDate">Data de Nascimento</label><br>
-  <input type="date" name="birthDate" id="birthDate" value="{{birthDate}}">
+    <input type="email" name="email" id="email" placeholder="E-mail" value="{{email}}">
 
-  <label for="phone">Telefone</label><br>
-  <input type="text" name="phone" id="phone" value="{{phone}}">
+    <input type="password" name="password" id="password" placeholder="Senha" value="{{password}}">
 
-  {{#if errorMessage}}
-  <div class="error-message">{{ errorMessage }}</div>
-  {{/if}}
+    <input type="date" name="birthDate" id="birthDate" placeholder="Data de Nascimento" value="{{birthDate}}">
 
-  <div class="progress">
-    <div id="StrengthProgressBar" class="progress-bar"></div>
-  </div>
+    <input type="text" name="phone" id="phone" placeholder="Telefone" value="{{phone}}">
 
-  <button type="submit">Criar Conta</button>
-</form>
+    {{#if errorMessage}}
+    <div class="error-message">{{ errorMessage }}</div>
+    {{/if}}
+
+    <div class="progress">
+      <div id="StrengthProgressBar" class="progress-bar"></div>
+    </div>
+
+    <button type="submit">Salvar alterações</button>
+  </form>
+</div>
