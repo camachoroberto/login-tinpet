@@ -5,10 +5,7 @@ const notifications = async (req, res) => {
   const promisses = [];
   const ownerId = req.session.currentUser._id;
   const pets = await Pet.find({ owner: { $eq: ownerId } });
-  const matches = await Match.find();
-  console.log(matches);
   for (let i = 0; i < pets.length; i += 1) {
-    console.log(pets[i]._id);
     promisses[i] = Match.find({ petEvaluated: pets[i]._id })
       .populate('petEvaluating')
       .populate('petEvaluated');
