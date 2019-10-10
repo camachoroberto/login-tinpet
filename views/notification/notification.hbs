@@ -1,27 +1,23 @@
-{{!-- {{#each groupPetsDatas as |item i|}}
-<img src="{{imageUrl}}" height="150" />
-<h1><a href="/match/{{{petInterested._id}}}">-{{@index}}: {{@key}} {{petInterested.[0]}}-</a></h1>
-<a href='/match-evaluation/{{_id}}/{{../petSelectId}}'>Aceiado</a>
-<button><a href='/delete/{{_id}}'>Rejeitado</a></button>
-<button><a href='/match/{{_id}}'>N/A</a></button>
-
-<p>DeadLine: {{updatedAt}}</p>
-<hr>
-{{/each}} --}}
 {{#each resp}}
-cachorro 1<br>
-<span><img src="{{this.petEvaluating.imageUrl}}" /></span><br>
-name: {{this.petEvaluating.name}}<br>
-birth: {{this.petEvaluating.birth}}<br>
-breed: {{this.petEvaluating.breed}}<br>
-gender: {{this.petEvaluating.gender}}<br>
-pedigree: {{this.petEvaluating.pedigree}}<br>
-<br><br><br>
-cachorro 2<br>
-<span><img src="{{this.petEvaluated.imageUrl}}" /></span><br>
+Meu Cachorro<br>
+{{!-- <span><img src="{{this.petEvaluated.imageUrl}}" /></span><br> --}}
 name: {{this.petEvaluated.name}}<br>
-birth: {{this.petEvaluated.birth}}<br>
+birth: {{dateFormat this.petEvaluated.birth "DD/MM/YYYY"}}<br>
 breed: {{this.petEvaluated.breed}}<br>
 gender: {{this.petEvaluated.gender}}<br>
 pedigree: {{this.petEvaluated.pedigree}}<br>
+<br><br><br>
+
+Outro Cachorro<br>
+{{!-- <span><img src="{{this.petEvaluating.imageUrl}}" /></span><br> --}}
+name: {{this.petEvaluating.name}}<br>
+birth: {{dateFormat this.petEvaluating.birth "DD/MM/YYYY"}}<br>
+breed: {{this.petEvaluating.breed}}<br>
+gender: {{this.petEvaluating.gender}}<br>
+pedigree: {{this.petEvaluating.pedigree}}<br><br>
+Informação para Contato<br>
+name: {{../user.name}}<br>
+email: {{../user.email}}<br>
+phone: {{../user.phone}}<br>
+<br><br><br>
 {{/each}}
