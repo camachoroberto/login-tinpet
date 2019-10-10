@@ -374,7 +374,8 @@ a {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center; }
+      text-align: center;
+      min-height: 70vh; }
       #application-page main .application-start h2 {
         font-size: 30px;
         font-weight: bold; }

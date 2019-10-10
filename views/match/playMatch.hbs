@@ -5,11 +5,15 @@
   </div>
   <header>
     <div>
-      <a href="/">
+      <a href="/my-account">
         <img src="/images/logo-primary.svg" alt="Logo">
       </a>
-      <button>{{name}}
+      <button class="user">{{name}}
         <div class="user-options">
+          <ul>
+            <li><a href="/user-edit/{{ownerId}}">Editar cadastro</a></li>
+            <li><a href="/logout">Sair</a></li>
+          </ul>
         </div>
       </button>
     </div>
