@@ -1,6 +1,6 @@
 {{#each resp}}
 Meu Cachorro<br>
-{{!-- <span><img src="{{this.petEvaluated.imageUrl}}" /></span><br> --}}
+<span><img src="{{this.petEvaluated.imageUrl}}" /></span><br>
 name: {{this.petEvaluated.name}}<br>
 birth: {{dateFormat this.petEvaluated.birth "DD/MM/YYYY"}}<br>
 breed: {{this.petEvaluated.breed}}<br>
@@ -9,7 +9,7 @@ pedigree: {{this.petEvaluated.pedigree}}<br>
 <br><br><br>
 
 Outro Cachorro<br>
-{{!-- <span><img src="{{this.petEvaluating.imageUrl}}" /></span><br> --}}
+<span><img src="{{this.petEvaluating.imageUrl}}" /></span><br>
 name: {{this.petEvaluating.name}}<br>
 birth: {{dateFormat this.petEvaluating.birth "DD/MM/YYYY"}}<br>
 breed: {{this.petEvaluating.breed}}<br>
