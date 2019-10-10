@@ -8,3 +8,20 @@
 <p>DeadLine: {{updatedAt}}</p>
 <hr>
 {{/each}} --}}
+{{#each resp}}
+cachorro 1<br>
+<span><img src="{{this.petEvaluating.imageUrl}}" /></span><br>
+name: {{this.petEvaluating.name}}<br>
+birth: {{this.petEvaluating.birth}}<br>
+breed: {{this.petEvaluating.breed}}<br>
+gender: {{this.petEvaluating.gender}}<br>
+pedigree: {{this.petEvaluating.pedigree}}<br>
+<br><br><br>
+cachorro 2<br>
+<span><img src="{{this.petEvaluated.imageUrl}}" /></span><br>
+name: {{this.petEvaluated.name}}<br>
+birth: {{this.petEvaluated.birth}}<br>
+breed: {{this.petEvaluated.breed}}<br>
+gender: {{this.petEvaluated.gender}}<br>
+pedigree: {{this.petEvaluated.pedigree}}<br>
+{{/each}}

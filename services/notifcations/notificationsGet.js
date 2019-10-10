@@ -13,6 +13,7 @@ const notifications = async (req, res) => {
 
   Promise.all(promisses).then(resp => {
     console.log('dsdasdasdasd', resp);
+    res.render('notification/notification', { resp: resp[0] });
   });
 
   // const arrayIdsPets = [];

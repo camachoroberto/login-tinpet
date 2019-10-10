@@ -3,7 +3,7 @@ const Match = require('../../models/Match');
 const matchPost = (req, res) => {
   const petEvaluated = req.params.petID;
   const petEvaluating = req.params.ownerPedID;
-  const evaluation = 'undecided';
+  const evaluation = 'accepted';
   const newMatch = new Match({
     petEvaluating,
     petEvaluated,
