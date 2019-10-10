@@ -42,14 +42,14 @@
           </span>
           <span>
             <strong>Data de Nascimento:</strong>
-            <p>{{birth}}</p>
+            <p>{{dateFormat birth "DD/MM/YYYY"}}</p>
           </span>
         </div>
         <div class="application-pet-list__buttons">
           <a href='/match-evaluation/{{_id}}/{{../petSelectId}}'><img src="/images/heart-solid.svg"
               style="animation: none" alt=""></a>
           <a href='/delete/{{_id}}'><img src="/images/times-solid.svg" alt=""></a>
-          <a href='/match/{{_id}}'><img src="/images/question-solid.svg" alt=""></a>
+          {{!-- <a href='/match/{{_id}}'><img src="/images/question-solid.svg" alt=""></a> --}}
         </div>
       </li>
       {{/each}}

@@ -1,5 +1,6 @@
-const Match = require('../../models/Match');
-const Pet = require('../../models/Pet');
+const Match = require("../../models/Match");
+const Pet = require("../../models/Pet");
+const User = require("../../models/User");
 
 const notifications = async (req, res) => {
   const promisses = [];
@@ -7,13 +8,15 @@ const notifications = async (req, res) => {
   const pets = await Pet.find({ owner: { $eq: ownerId } });
   for (let i = 0; i < pets.length; i += 1) {
     promisses[i] = Match.find({ petEvaluated: pets[i]._id })
-      .populate('petEvaluating')
-      .populate('petEvaluated');
+      .populate("petEvaluated")
+      .populate("petEvaluating");
   }
 
-  Promise.all(promisses).then(resp => {
-    console.log('dsdasdasdasd', resp);
-    res.render('notification/notification', { resp: resp[0] });
+  Promise.all(promisses).then(async resp => {
+    console.log("dsdasdasdasd", resp[0][0].petEvaluating.owner);
+    const otherUserId = resp[0][0].petEvaluating.owner;
+    const user = await User.findById(otherUserId);
+    res.render("notification/notification", { resp: resp[0], user });
   });
 
   // const arrayIdsPets = [];

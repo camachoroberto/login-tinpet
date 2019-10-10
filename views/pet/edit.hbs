@@ -11,8 +11,8 @@
     <input type="text" name="breed" id="breed" placeholder="Raça" value="{{breed}}">
 
     <label for="birth">Data de nascimento</label>
-    <input type="date" name="birth" id="birth" placeholder="Data de nascimento" value={{birth}}>
-
+    <input type="date" name="birth" id="birth" placeholder="Data de nascimento"
+      value="{{dateFormat birth "DD/MM/YYYY"}}">
     <label for="gender">Gênero</label>
     <select name="gender" id="gender">
       <option value="{{gender}}">{{gender}}</option>
