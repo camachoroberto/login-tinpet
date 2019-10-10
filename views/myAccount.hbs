@@ -4,7 +4,12 @@
       <a href="/my-account">
         <img src="/images/logo-primary.svg" alt="Logo">
       </a>
-      <button class="user">{{name}}
+      <div style="height: 0; width: 10px; margin-right: 50px;">
+        <a href="/notifications">
+          <img src="/images/heart-yellow.svg" alt="" style="width: 50px; transform: none; margin: 0">
+        </a>
+      </div>
+      <button class="user">
         <div class="user-options">
           <ul>
             <li><a href="/user-edit/{{ownerId}}">Editar cadastro</a></li>
@@ -53,7 +58,6 @@
         </div>
         <div class="application-pet-list__buttons">
           <a href='/match/{{_id}}'><img src="/images/bone-solid.svg" alt=""></a>
-          <a href='/notification/{{_id}}'><img src="/images/bone-solid.svg" alt=""></a>
           <a href="/edit/{{_id}}"><img src="/images/edit-regular.svg" alt=""></a>
           <a href="/delete/{{_id}}"><img src="/images/trash-alt-regular.svg" alt=""></a>
         </div>
